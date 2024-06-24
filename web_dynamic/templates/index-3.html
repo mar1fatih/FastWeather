@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>FastWeather</title>
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='styles/index-3.css')}}/>
+    <link rel="icon" href="../../static/images/icon.png" type="image/png">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="logo">FastWeather</h1>
+    </header>
+    <main id="main" >
+	    <div id="city">{{ city_name }}</div>
+	    <div id="content">
+
+		    <div class="day1">
+			<div class="days" >{{ date_list[0] }}</div>
+			<div class="cast_temp">
+				<div class="day1_icon" style="background-image: url('../../static/images/{{ img_list[0] }}')"></div>
+				<div class="temperature">{{ forecast_list[0]['temperature'] }}</div>
+			</div>
+			<div class="description">{{ forecast_list[0]['description'] }}</div>
+			<div class="humidity">humidity: {{ forecast_list[0]['humidity'] }}</div>
+			<div class="pressure">pressure: {{ forecast_list[0]['pressure'] }}</div>
+			<div class="wind_speed">wind_speed: {{ forecast_list[0]['wind_speed'] }}</div>
+		    </div>
+		    <div class="day2">
+			<div class="days">{{ date_list[1] }}</div>
+                        <div class="cast_temp">
+				<div class="day1_icon" style="background-image: url('../../static/images/{{ img_list[1] }}')"></div>
+                                <div class="temperature">{{ forecast_list[1]['temperature'] }}</div>
+			</div>
+                        <div class="description" >{{ forecast_list[1]['description'] }}</div>
+                        <div class="humidity" >humidity: {{ forecast_list[1]['humidity'] }}</div>
+                        <div class="pressure" >pressure: {{ forecast_list[1]['pressure'] }}</div>
+                        <div class="wind_speed" >wind_speed: {{ forecast_list[1]['wind_speed'] }}</div>
+		    </div>
+		    <div class="day3">
+			<div class="days" >{{ date_list[2] }}</div>
+                        <div class="cast_temp">
+				<div class="day1_icon" style="background-image: url('../../static/images/{{ img_list[2] }}')"></div>
+                                <div class="temperature">{{ forecast_list[2]['temperature'] }}</div>
+			</div>
+                        <div class="description">{{ forecast_list[2]['description'] }}</div>
+                        <div class="humidity">humidity: {{ forecast_list[2]['humidity'] }}</div>
+                        <div class="pressure">pressure: {{ forecast_list[2]['pressure'] }}</div>
+                        <div class="wind_speed">wind_speed: {{ forecast_list[2]['wind_speed'] }}</div>
+		    </div>
+		    <div class="day4">
+			<div class="days" >{{ date_list[3] }}</div>
+                        <div class="cast_temp">
+				<div class="day1_icon" style="background-image: url('../../static/images/{{ img_list[3] }}')"></div>
+                                <div class="temperature">{{ forecast_list[3]['temperature'] }}</div>
+			</div>
+                        <div class="description">{{ forecast_list[3]['description'] }}</div>
+                        <div class="humidity">humidity: {{ forecast_list[3]['humidity'] }}</div>
+                        <div class="pressure">pressure: {{ forecast_list[3]['pressure'] }}</div>
+                        <div class="wind_speed">wind_speed: {{ forecast_list[3]['wind_speed'] }}</div>
+		    </div>
+		    <div class="day5">
+			<div class="days" >{{ date_list[4] }}</div>
+                        <div class="cast_temp">
+				<div class="day1_icon" style="background-image: url('../../static/images/{{ img_list[4] }}')"></div>
+                                <div class="temperature">{{ forecast_list[4]['temperature'] }}</div>
+			</div>
+                        <div class="description">{{ forecast_list[4]['description'] }}</div>
+                        <div class="humidity">humidity: {{ forecast_list[4]['humidity'] }}</div>
+                        <div class="pressure">pressure: {{ forecast_list[4]['pressure'] }}</div>
+                        <div class="wind_speed">wind_speed: {{ forecast_list[4]['wind_speed'] }}</div>
+		    </div>
+
+	    </div>
+	    <div id="redirection">
+		<a href="http://127.0.0.1:5000/" id="main_link">&lt;==return to main page</a>
+            <a href="http://127.0.0.1:5000/weather/{{ city_name }}" id="weather_link" >Today's weather==&gt;</a>
+	    </div>
+    </main>
+    <script src="../../static/scripts/index-3.js" ></script>
+    <footer>
+        <p>&copy; 2024 FastWeather. All rights reserved.</p>
+    </footer>
+</body>
+</html>

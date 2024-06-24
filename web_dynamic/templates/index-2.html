@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>FastWeather</title>
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='styles/index-2.css')}}/>
+    <link rel="icon" href="../static/images/icon.png" type="image/png">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="logo">FastWeather</h1>
+    </header>
+    <main id="main" >
+	    <img src="../static/images/{{ img_src }}" class="weather_icon" id="weather_icon" >
+	
+	    <section id="city">{{ weather.city }}</section>
+
+	    <section id="temperature">
+		{{ weather.temperature }}
+	    </section>
+
+	    <section id="description">{{ weather.description }}</section>
+	    <section id="humidity">humidity: {{ weather.humidity }}
+		    <div></div>
+	    </section>
+
+	    <section id="pressure">pressure: {{ weather.pressure }}
+	    <div></div>
+	    </section>
+
+	    <section id="wind_speed">wind speed: {{ weather.wind_speed }}
+	    <div></div>
+	    </section>
+
+	    <section id="date">{{ date }}</section>
+	    <section id="today">{{ today }}</section>
+	    <a href="http://127.0.0.1:5000/" class="link_to_page" id="main_link">&lt;==return to main page</a>
+	    <a href="http://127.0.0.1:5000/weather/forecast/{{ weather.city }}" id="forcast_link" >forecast 5days==&gt;</a>
+
+    </main>
+    <script src="../static/scripts/index-2.js" ></script>
+    <footer>
+        <p>&copy; 2024 FastWeather. All rights reserved.</p>
+    </footer>
+</body>
+</html>
