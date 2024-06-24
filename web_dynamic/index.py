@@ -34,7 +34,7 @@ def fast_w(city_name):
     base_url = "https://api.openweathermap.org/data/2.5/weather"
     params = {
         'q': city_name,
-        'appid': 'd5c4c65720c3b2d694d74e90dd9496d9', # enter your API key here
+        'appid': '', # enter your API key here
         'units': 'metric'
     }
     response = requests.get(base_url, params=params)
@@ -83,7 +83,7 @@ def forcast(city_name):
     url = "https://api.openweathermap.org/data/2.5/forecast"
     params = {
             'q': city_name,
-            'appid': 'd5c4c65720c3b2d694d74e90dd9496d9',# enter your API key here
+            'appid': '',# enter your API key here
             'units': 'metric'
             }
     response = requests.get(url, params=params)
